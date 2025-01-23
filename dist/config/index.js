@@ -7,7 +7,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const path_1 = __importDefault(require("path"));
 dotenv_1.default.config({ path: path_1.default.join(process.cwd(), '.env') });
 const config = {
-    port: 5000,
+    port: process.env.PORT || 5000,
     database_url: process.env.DATABASE_URL || '',
     bycrypt_sault_round: 12,
     env: 'development',

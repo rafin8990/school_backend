@@ -11,7 +11,7 @@ import { NoticeService } from './notice.service'
 const createNotice = catchAsync(async (req: Request, res: Response) => {
   const file = req.file
   const notice = req.body
-  console.log(file ,notice)
+
   const data = await NoticeService.createNotice(notice, file)
   sendResponse(res, {
     statusCode: httpStatus.OK,

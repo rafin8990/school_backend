@@ -12,11 +12,9 @@ import { IAchievements } from './achievements.interface'
 import { AchievementsService } from './achievements.service'
 
 const createAchievements = catchAsync(async (req: Request, res: Response) => {
-  const file = req.file
   const achievementsData = req.body
   const achievement = await AchievementsService.createAchievements(
-    achievementsData,
-    file
+    achievementsData
   )
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -61,14 +59,13 @@ const getSingleAchievement = catchAsync(async (req: Request, res: Response) => {
 
 const updateAchievements = catchAsync(async (req: Request, res: Response) => {
   const achievementId = req.params.id
-  const file = req.file
+
   const achievementsData = req.body
   console.log({ achievementsData, achievementId })
 
   const result = await AchievementsService.updateAchievements(
     achievementId,
-    achievementsData,
-    file
+    achievementsData
   )
 
   sendResponse<IAchievements>(res, {

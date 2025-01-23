@@ -5,13 +5,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.moduleRoutes = void 0;
 const express_1 = __importDefault(require("express"));
+const achievements_route_1 = require("../modules/achievements/achievements.route");
+const admissionCircular_route_1 = require("../modules/admission_circular/admissionCircular.route");
+const admissionResult_route_1 = require("../modules/admission_result/admissionResult.route");
 const auth_route_1 = require("../modules/auth/auth.route");
 const chairmanMessage_route_1 = require("../modules/chairman_message/chairmanMessage.route");
+const classRoutine_route_1 = require("../modules/classRoutine/classRoutine.route");
+const examRoutine_route_1 = require("../modules/examRoutine/examRoutine.route");
+const features_route_1 = require("../modules/features/features.route");
 const history_route_1 = require("../modules/history/history.route");
+const InstituteMotto_route_1 = require("../modules/institute_motto/InstituteMotto.route");
+const newsEvents_route_1 = require("../modules/news-events/newsEvents.route");
 const notice_route_1 = require("../modules/notice/notice.route");
 const photo_route_1 = require("../modules/photo/photo.route");
+const principalMessage_route_1 = require("../modules/principal-message/principalMessage.route");
 const info_route_1 = require("../modules/school_info/info.route");
 const slider_route_1 = require("../modules/slider/slider.route");
+const syllabus_route_1 = require("../modules/syllabus/syllabus.route");
+const teachers_route_1 = require("../modules/teachers/teachers.route");
 const user_route_1 = require("../modules/user/user.route");
 const video_route_1 = require("../modules/video/video.route");
 const at_a_glance_route_1 = require("./../modules/at_a_glance/at_a_glance.route");
@@ -50,8 +61,52 @@ exports.moduleRoutes = [
         route: chairmanMessage_route_1.ChairmanMessageRoute,
     },
     {
+        path: '/principal-message',
+        route: principalMessage_route_1.PrincipalMessageRoute,
+    },
+    {
+        path: '/teachers',
+        route: teachers_route_1.TeacherRoute,
+    },
+    {
+        path: '/achievements',
+        route: achievements_route_1.AchievementsRoute,
+    },
+    {
         path: '/at-a-glance',
         route: at_a_glance_route_1.AtAGlanceRoute,
+    },
+    {
+        path: '/institute-motto',
+        route: InstituteMotto_route_1.InstituteMottoRoute,
+    },
+    {
+        path: '/features',
+        route: features_route_1.FeaturesRoute,
+    },
+    {
+        path: '/news-events',
+        route: newsEvents_route_1.NewsEventsRoute,
+    },
+    {
+        path: '/admission-circular',
+        route: admissionCircular_route_1.AdmissionCircularRoute,
+    },
+    {
+        path: '/admission-result',
+        route: admissionResult_route_1.AdmissionResultRoute,
+    },
+    {
+        path: '/class-routine',
+        route: classRoutine_route_1.ClassRoutineRoute,
+    },
+    {
+        path: '/exam-routine',
+        route: examRoutine_route_1.ExamRoutineRoute,
+    },
+    {
+        path: '/syllabus',
+        route: syllabus_route_1.SyllabusRoute,
     },
     {
         path: '/history',

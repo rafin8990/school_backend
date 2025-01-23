@@ -15,6 +15,10 @@ const newsEventsSchema = new Schema<INewsEvents>(
       type: String,
       required: true,
     },
+    category: {
+      type: String,
+      enum: ['news', 'event'],
+    },
   },
   {
     timestamps: true,

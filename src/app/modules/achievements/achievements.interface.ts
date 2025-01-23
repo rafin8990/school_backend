@@ -1,7 +1,8 @@
 import { Model } from 'mongoose'
 
 export type IAchievements = {
-  image: string
+  year: string
+  category: string
   title: string
   description: string
 }

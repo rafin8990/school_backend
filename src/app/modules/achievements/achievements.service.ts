@@ -12,15 +12,8 @@ import { IAchievements } from './achievements.interface'
 import { Achievements } from './achievements.model'
 
 const createAchievements = async (
-  achievements: IAchievements,
-  file?: Express.Multer.File
+  achievements: IAchievements
 ): Promise<IAchievements> => {
-  if (!file) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'File Not Found')
-  }
-  if (file) {
-    achievements.image = `uploads/${file.filename}`
-  }
   const result = await Achievements.create(achievements)
   return result
 }
@@ -102,13 +95,9 @@ const getSingleAchievement = async (
 
 const updateAchievements = async (
   id: string,
-  updateData: Partial<IAchievements>,
-  file?: Express.Multer.File
+  updateData: Partial<IAchievements>
 ): Promise<IAchievements | null> => {
   try {
-    if (file) {
-      updateData.image = `uploads/${file.filename}`
-    }
     const achievement = await Achievements.findByIdAndUpdate(id, updateData, {
       new: true,
       runValidators: true,

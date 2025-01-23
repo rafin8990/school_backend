@@ -3,11 +3,15 @@ import { AchievementsModel, IAchievements } from './achievements.interface'
 
 const achievementsSchema = new Schema<IAchievements>(
   {
-    image: {
+    category: {
       type: String,
       required: true,
     },
     title: {
+      type: String,
+      required: true,
+    },
+    year: {
       type: String,
       required: true,
     },
