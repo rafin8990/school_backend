@@ -1,8 +1,7 @@
 export type IHistoryFilter = {
-    searchTerm: string
-    title?: string
-  }
-  
-  export const HistorySearchableFields = ['title']
-  export const HistoryFilterableFields = ['title']
-  
+  searchTerm: string
+  title?: string
+}
+
+export const HistoryFilterableFields = ['title']
+export const HistorySearchableFields = ['title']

@@ -23,7 +23,6 @@ const notice_service_1 = require("./notice.service");
 const createNotice = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const file = req.file;
     const notice = req.body;
-    console.log(file, notice);
     const data = yield notice_service_1.NoticeService.createNotice(notice, file);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,

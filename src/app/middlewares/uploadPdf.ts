@@ -5,9 +5,8 @@ import ApiError from '../../errors/ApiError';
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'dist/pdf/');
+    cb(null, 'src/pdf/');
   },
-  //new folder create
   filename: (req, file, cb) => {
     const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
     cb(null, `${uniqueSuffix}${path.extname(file.originalname)}`);

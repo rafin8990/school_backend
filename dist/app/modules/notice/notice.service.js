@@ -34,7 +34,7 @@ const createNotice = (notice, file) => __awaiter(void 0, void 0, void 0, functio
         throw new ApiError_1.default(http_status_1.default.NOT_FOUND, 'File Not Found');
     }
     if (file) {
-        notice.pdfUrl = `pdf/${file.filename}`;
+        notice.pdfUrl = `uploads/${file.filename}`;
     }
     const result = yield notice_model_1.Notice.create(notice);
     return result;
@@ -99,7 +99,7 @@ const getSingleNotice = (id) => __awaiter(void 0, void 0, void 0, function* () {
 const updateNotice = (id, updateData, file) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (file) {
-            updateData.pdfUrl = `pdf/${file.filename}`;
+            updateData.pdfUrl = `uploads/${file.filename}`;
         }
         const notice = yield notice_model_1.Notice.findByIdAndUpdate(id, updateData, {
             new: true,

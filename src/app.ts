@@ -35,7 +35,6 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Working Successfully')
 })
 
-
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(httpStatus.NOT_FOUND).json({
     success: false,
